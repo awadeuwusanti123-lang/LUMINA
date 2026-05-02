@@ -117,33 +117,33 @@ export default function App() {
       
       {/* 1. Header */}
       <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-[#1A365D]/5 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-28 flex items-center justify-between">
-          <a href="#" className="flex items-center py-4 group -ml-2 md:-ml-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 md:h-24 lg:h-28 flex items-center justify-between">
+          <a href="#" className="flex items-center py-4 group -ml-2">
             <img 
               src="https://lh3.googleusercontent.com/d/1zj-n2QbUY4_tAZiZfE1knOekZrKlYeC8" 
               alt="Lumina Dental Studio Logo" 
-              className="h-14 md:h-16 w-auto object-contain drop-shadow-md transition-transform duration-300 transform group-hover:scale-105" 
+              className="h-12 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-md transition-transform duration-300 transform group-hover:scale-105" 
             />
-            <div className="flex flex-col justify-center -ml-4 md:-ml-5">
-              <span className="text-2xl md:text-3xl font-bold tracking-tight text-[#1A365D] uppercase leading-none mb-0.5">LUMINA</span>
-              <span className="text-[10px] md:text-[11px] font-bold tracking-[0.35em] text-[#1A365D]/50 uppercase leading-none">DENTAL STUDIO</span>
+            <div className="flex flex-col justify-center -ml-3 sm:-ml-4 lg:-ml-5">
+              <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#1A365D] uppercase leading-none mb-0.5">LUMINA</span>
+              <span className="text-[8px] sm:text-[10px] lg:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.35em] text-[#1A365D]/50 uppercase leading-none">DENTAL STUDIO</span>
             </div>
           </a>
           
-          <nav className="hidden md:flex gap-10 items-center text-sm font-semibold text-[#1A365D]/60 ml-auto mr-10">
+          <nav className="hidden lg:flex gap-8 xl:gap-10 items-center text-sm font-semibold text-[#1A365D]/60 ml-auto mr-8 xl:mr-10">
             <a href="#servicios" className="hover:text-[#1A365D] transition-colors">Servicios</a>
             <a href="#resultados" className="hover:text-[#1A365D] transition-colors">Resultados</a>
             <a href="#faq" className="hover:text-[#1A365D] transition-colors">FAQ</a>
             <a href="#contacto" className="hover:text-[#1A365D] transition-colors">Contacto</a>
           </nav>
 
-          <div className="hidden md:block">
-            <a href="#agendar" onClick={handleScrollToForm} className="bg-[#1A365D] text-white px-8 py-3 rounded-full hover:bg-[#2c4d7e] transition-all font-semibold text-sm shadow-lg shadow-[#1A365D]/20 hover:shadow-[#1A365D]/30 hover:-translate-y-0.5 inline-block">
+          <div className="hidden lg:block">
+            <a href="#agendar" onClick={handleScrollToForm} className="bg-[#1A365D] text-white px-8 py-3 rounded-full hover:bg-[#2c4d7e] transition-all font-semibold text-sm shadow-lg shadow-[#1A365D]/20 hover:shadow-[#1A365D]/30 hover:-translate-y-0.5 inline-block whitespace-nowrap">
               Mi Reserva
             </a>
           </div>
 
-          <button className="md:hidden text-[#1A365D] p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="lg:hidden text-[#1A365D] p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -156,7 +156,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-md pt-24 px-6 md:hidden flex flex-col"
+            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-md pt-24 px-6 lg:hidden flex flex-col"
           >
             <motion.nav 
               initial="closed"
@@ -650,9 +650,12 @@ export default function App() {
                         </button>
                         <button 
                           onClick={() => setShowSummary(false)}
-                          className="w-full py-4 text-xs font-bold uppercase tracking-widest text-[#1A365D]/50 hover:text-[#1A365D] transition-colors"
+                          className="w-full py-4 bg-transparent border-2 border-[#1A365D]/10 text-[#1A365D]/80 hover:text-[#1A365D] hover:bg-[#1A365D]/5 hover:border-[#1A365D]/20 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all transform active:scale-[0.98]"
                         >
-                          Modificar Datos
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                          </svg>
+                          Editar Reserva
                         </button>
                       </div>
                     </motion.div>
